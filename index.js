@@ -42,13 +42,15 @@ function total() {
 }
 
 function removeFromCart(item) {
-  for (var i = 0; i < cart.length; i++) {
-    if (cart[i].hasOwnProperty(item)) {
-      cart.splice(i, 1);
+  for (var i = 0; i < cart.length; i++){
+    if (item === cart[i].itemName) {
+      cart.splice(i, 1); //removes 1 item at index i
       return cart;
     }
   }
-  return console.log("That item is not in your cart.");
+  if (item != cart[item]) {
+    return "That item is not in your cart."
+  }
 }
 
 function placeOrder(ccNum) {
